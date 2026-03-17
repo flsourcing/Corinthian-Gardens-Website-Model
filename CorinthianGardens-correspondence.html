@@ -15,13 +15,11 @@
   <meta name='robots' content='max-image-preview:large' />
   <link rel='dns-prefetch' href='//fonts.googleapis.com' />
   <style type="text/css">
-    /* Force correspondence dropdown to show (no JS on static site) */
-    #post-8110 .wpb-content-wrapper .vc_row.vc_custom_1433701441308,
-    #post-8110 .wpb-content-wrapper .vc_do_toggle,
-    #post-8110 .wpb-content-wrapper .vc_do_toggle .vc_toggle_title,
-    #post-8110 .wpb-content-wrapper .vc_do_toggle .vc_toggle_content { display: block !important; visibility: visible !important; }
-    #post-8110 .vc_do_toggle.vc_toggle_default .vc_toggle_title h4 { padding: 15px 20px; font-size: 20px; font-weight: 900 !important; color: #fff !important; background-color: #001b43; margin: 0; }
-    #post-8110 .vc_do_toggle .vc_toggle_content { padding: 15px 20px; margin-bottom: 22px; }
+    /* Correspondence meeting block - standalone, not targeted by WPBakery JS/CSS */
+    .cg-correspondence-meeting { margin-bottom: 22px; }
+    .cg-correspondence-meeting .cg-meeting-title { display: block; padding: 15px 20px; font-size: 20px; font-weight: 900; color: #fff; background-color: #001b43; margin: 0; }
+    .cg-correspondence-meeting .cg-meeting-body { display: block; padding: 15px 20px; margin-bottom: 22px; background: #fff; }
+    .cg-correspondence-meeting .cg-meeting-body a { color: #c00; text-decoration: underline; }
   </style>
   <!-- This site uses the Google Analytics by MonsterInsights plugin v10.0.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
   <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
@@ -5149,30 +5147,15 @@
             <article id="post-8110" class="post-8110 page type-page status-publish hentry">
               <div class="wpb-content-wrapper">
                 <p class=""></p>
-                <style type="text/css">
-.wpb-content-wrapper .vc_do_toggle .vc_toggle_content{display:block !important;}
-.wpb-content-wrapper .vc_do_toggle .vc_toggle_title{cursor:default;}
-.wpb-content-wrapper .vc_do_toggle.vc_toggle_default .vc_toggle_title h4{padding:15px 20px;font-size:20px;font-weight:900 !important;color:#fff !important;background-color:#001b43;margin:0;}
-.wpb-content-wrapper .vc_do_toggle .vc_toggle_content{padding:15px 20px;margin-bottom:22px;}
-</style>
-
-                <div class="vc_row wpb_row vc_row-fluid vc_custom_1433701441308 ts-row-wide" style="display:block !important; visibility:visible !important;">
-
-                  <div class="wpb_column vc_column_container vc_col-sm-12">
-                    <div class="wpb_wrapper">
-                      <div class="vc_do_toggle vc_toggle vc_toggle_default vc_toggle_color_default  vc_toggle_size_md vc_toggle_active" style="display:block !important; visibility:visible !important;">
-                        <div class="vc_toggle_title" style="display:block !important;">
-                          <h4 style="padding:15px 20px; font-size:20px; font-weight:900; color:#fff !important; background-color:#001b43; margin:0;">Annual meeting of owner and elections of board of directors. - Monday, February 3rd, 2025 Common Room - 7pm</h4><i class="vc_toggle_icon"></i>
-                        </div>
-                        <div class="vc_toggle_content" style="display:block !important; visibility:visible !important; padding:15px 20px; margin-bottom:22px;">
-                          <h5 data-canvas-width="119.93261170280766"><strong>Click here for more detailed information. <a href="https://701harbour.com/wp-content/uploads/2025/01/correspondence_2025.pdf" target="_blank" rel="noopener" data-wplink-edit="true">page 1,</a> <a href="https://701harbour.com/wp-content/uploads/2025/01/second_notice_february.pdf" target="_blank" rel="noopener">page 2</a></strong></h5>
-                          <h6 data-canvas-width="104.0507765245508"> </h6>
-                        </div>
-                      </div>
-                    </div>
+                <!-- Standalone meeting block (not WPBakery) so it always shows -->
+                <div class="cg-correspondence-meeting">
+                  <div class="cg-meeting-title">
+                    Annual meeting of owner and elections of board of directors. - Monday, February 3rd, 2025 Common Room - 7pm
+                  </div>
+                  <div class="cg-meeting-body">
+                    <strong>Click here for more detailed information. <a href="https://701harbour.com/wp-content/uploads/2025/01/correspondence_2025.pdf" target="_blank" rel="noopener">page 1,</a> <a href="https://701harbour.com/wp-content/uploads/2025/01/second_notice_february.pdf" target="_blank" rel="noopener">page 2</a></strong>
                   </div>
                 </div>
-
 
                 <p class="">Muddy area out back</p>
 
