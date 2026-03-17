@@ -16,9 +16,11 @@ Website for Corinthian Gardens (701 Harbor).
    - When it’s ready, GitHub shows a message like: *“Your site is live at `https://flsourcing.github.io/Corinthian-Gardens-Website-Model/`”*.
 
 3. **Open the site**
-   - **Home (root):**  
+   - **Home (Corinthian Gardens):**  
      https://flsourcing.github.io/Corinthian-Gardens-Website-Model/
-   - **701 Harbor page:**  
+   - **Corinthian Gardens page:**  
+     https://flsourcing.github.io/Corinthian-Gardens-Website-Model/CorinthianGardens.html
+   - **Reference (701 Harbor):**  
      https://flsourcing.github.io/Corinthian-Gardens-Website-Model/701harbor.html
 
 After the first deployment, future pushes to the selected branch will update the live site automatically.
