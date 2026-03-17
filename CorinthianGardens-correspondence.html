@@ -15,16 +15,18 @@
   <meta name='robots' content='max-image-preview:large' />
   <link rel='dns-prefetch' href='//fonts.googleapis.com' />
   <style type="text/css">
-    /* Native details/summary dropdown - works without JS, cannot be overridden */
-    #cgd-dropdown { margin: 0 0 22px 0 !important; padding: 0 !important; display: block !important; visibility: visible !important; opacity: 1 !important; }
-    #cgd-dropdown summary { display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 15px 20px !important; background: #001b43 !important; color: #fff !important; font-size: 20px !important; font-weight: 900 !important; cursor: pointer !important; list-style: none !important; }
-    #cgd-dropdown summary::-webkit-details-marker { display: none !important; }
-    #cgd-dropdown summary::marker { display: none !important; content: none !important; }
-    #cgd-dropdown summary::after { content: '\25BC'; font-size: 14px; color: #fff; margin-left: 10px; transition: transform 0.2s ease; }
-    #cgd-dropdown[open] summary::after { transform: rotate(180deg); }
-    #cgd-dropdown .cgd-dropdown-inner { padding: 15px 20px !important; background: #fff !important; border: 1px solid #e0e0e0 !important; border-top: none !important; }
-    #cgd-dropdown .cgd-dropdown-inner p { margin: 0 !important; font-size: 15px !important; font-weight: bold !important; color: #333 !important; }
-    #cgd-dropdown .cgd-dropdown-inner a { color: #c00 !important; text-decoration: underline !important; }
+    /* Correspondence dropdown - exact replica of 701harbour vc_toggle, self-contained */
+    .wpb-content-wrapper .vc_do_toggle { margin-bottom: 22px !important; display: block !important; visibility: visible !important; }
+    .wpb-content-wrapper .vc_toggle_default .vc_toggle_title { cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 0 !important; margin: 0 !important; }
+    .wpb-content-wrapper .vc_toggle_default .vc_toggle_title h4 { margin: 0 !important; padding: 15px 20px !important; font-size: 20px !important; font-weight: 900 !important; color: #fff !important; background-color: #001b43 !important; flex: 1 !important; }
+    .wpb-content-wrapper .vc_toggle_icon { display: inline-block !important; width: 24px !important; height: 24px !important; margin-left: 10px !important; margin-right: 20px !important; position: relative !important; flex-shrink: 0 !important; }
+    .wpb-content-wrapper .vc_toggle_icon::before { content: '' !important; position: absolute !important; top: 50% !important; left: 50% !important; width: 14px !important; height: 2px !important; background: #fff !important; transform: translate(-50%, -50%) !important; }
+    .wpb-content-wrapper .vc_toggle_icon::after { content: '' !important; position: absolute !important; top: 50% !important; left: 50% !important; width: 2px !important; height: 14px !important; background: #fff !important; transform: translate(-50%, -50%) !important; transition: transform 0.2s, opacity 0.2s !important; }
+    .wpb-content-wrapper .vc_toggle_active .vc_toggle_icon::after { transform: translate(-50%, -50%) rotate(90deg) !important; opacity: 0 !important; }
+    .wpb-content-wrapper .vc_toggle_content { display: none !important; padding: 15px 20px !important; background: #fff !important; }
+    .wpb-content-wrapper .vc_toggle_active .vc_toggle_content { display: block !important; }
+    .wpb-content-wrapper .vc_toggle_content h5 { margin: 0 !important; font-size: 16px !important; }
+    .wpb-content-wrapper .vc_toggle_content a { color: #c00 !important; text-decoration: underline !important; }
   </style>
   <!-- This site uses the Google Analytics by MonsterInsights plugin v10.0.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
   <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
@@ -5153,14 +5155,37 @@
               <div class="wpb-content-wrapper">
                 <p class=""></p>
 
-                <details id="cgd-dropdown" open>
-                  <summary>Annual meeting of owner and elections of board of directors. - Monday, February 3rd, 2025 Common Room - 7pm</summary>
-                  <div class="cgd-dropdown-inner">
-                    <p>Click here for more detailed information. <a href="https://701harbour.com/wp-content/uploads/2025/01/correspondence_2025.pdf" target="_blank" rel="noopener">page 1,</a> <a href="https://701harbour.com/wp-content/uploads/2025/01/second_notice_february.pdf" target="_blank" rel="noopener">page 2</a></p>
+                <div class="vc_row wpb_row vc_row-fluid vc_custom_1433701441308 ts-row-wide">
+                  <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="wpb_wrapper">
+                      <div class="vc_do_toggle vc_toggle vc_toggle_default vc_toggle_color_default vc_toggle_size_md vc_toggle_active">
+                        <div class="vc_toggle_title">
+                          <h4>Annual meeting of owner and elections of board of directors. - Monday, February 3rd, 2025 Common Room - 7pm</h4><i class="vc_toggle_icon"></i>
+                        </div>
+                        <div class="vc_toggle_content">
+                          <h5><strong>Click here for more detailed information. <a href="https://701harbour.com/wp-content/uploads/2025/01/correspondence_2025.pdf" target="_blank" rel="noopener">page 1,</a> <a href="https://701harbour.com/wp-content/uploads/2025/01/second_notice_february.pdf" target="_blank" rel="noopener">page 2</a></strong></h5>
+                          <h6> </h6>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </details>
+                </div>
 
                 <p class="">Muddy area out back</p>
+
+                <script>
+                  (function() {
+                    document.addEventListener('DOMContentLoaded', function() {
+                      var titles = document.querySelectorAll('.wpb-content-wrapper .vc_toggle_title');
+                      titles.forEach(function(t) {
+                        t.addEventListener('click', function() {
+                          var toggle = this.closest('.vc_do_toggle');
+                          if (toggle) toggle.classList.toggle('vc_toggle_active');
+                        });
+                      });
+                    });
+                  })();
+                </script>
 
                 <div class="wp-block-file">
                   <object class="wp-block-file__embed" data="Gmail-Muddy-area-out-back.pdf" type="application/pdf" style="width:100%;height:600px;" aria-label="Embed of Gmail - Muddy area out back."></object>
