@@ -12,6 +12,11 @@
     document.documentElement.className = document.documentElement.className + ' yes-js js_active js'
   </script>
   <title>Correspondence | Corinthian Gardens</title>
+  <style type="text/css">
+    /* Clear content from under transparent/sticky header */
+    #main.wrapper { padding-top: 120px !important; }
+    @media (max-width: 1024px) { #main.wrapper { padding-top: 100px !important; } }
+  </style>
   <meta name='robots' content='max-image-preview:large' />
   <link rel='dns-prefetch' href='//fonts.googleapis.com' />
   <link rel="alternate" type="application/rss+xml" title="701 Harbour Terrace &raquo; Feed" href="https://701harbour.com/feed/" />
