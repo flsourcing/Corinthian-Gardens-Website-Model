@@ -20,7 +20,5 @@ Website for Corinthian Gardens (701 Harbor).
      https://flsourcing.github.io/Corinthian-Gardens-Website-Model/
    - **Corinthian Gardens page:**  
      https://flsourcing.github.io/Corinthian-Gardens-Website-Model/CorinthianGardens.html
-   - **Reference (701 Harbor):**  
-     https://flsourcing.github.io/Corinthian-Gardens-Website-Model/701harbor.html
 
 After the first deployment, future pushes to the selected branch will update the live site automatically.
