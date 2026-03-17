@@ -15,11 +15,18 @@
   <meta name='robots' content='max-image-preview:large' />
   <link rel='dns-prefetch' href='//fonts.googleapis.com' />
   <style type="text/css">
-    /* Correspondence meeting block - standalone, not targeted by WPBakery JS/CSS */
-    .cg-correspondence-meeting { margin-bottom: 22px; }
-    .cg-correspondence-meeting .cg-meeting-title { display: block; padding: 15px 20px; font-size: 20px; font-weight: 900; color: #fff; background-color: #001b43; margin: 0; }
-    .cg-correspondence-meeting .cg-meeting-body { display: block; padding: 15px 20px; margin-bottom: 22px; background: #fff; }
-    .cg-correspondence-meeting .cg-meeting-body a { color: #c00; text-decoration: underline; }
+    /* vc_toggle dropdown styles for static file */
+    .vc_toggle { margin-bottom: 22px; }
+    .vc_toggle_default .vc_toggle_title { cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 0; }
+    .vc_toggle_default .vc_toggle_title h4 { margin: 0; flex: 1; }
+    .vc_toggle_icon { display: inline-block; width: 24px; height: 24px; flex-shrink: 0; margin-left: 10px; position: relative; }
+    .vc_toggle_icon::before, .vc_toggle_icon::after { content: ''; position: absolute; background: #fff; border-radius: 2px; }
+    .vc_toggle_icon::before { width: 14px; height: 2px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .vc_toggle_icon::after { width: 2px; height: 14px; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.2s, opacity 0.2s; }
+    .vc_toggle_active .vc_toggle_icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+    .vc_toggle_content { padding: 15px 20px; background: #fff; display: none; }
+    .vc_toggle_active .vc_toggle_content { display: block; }
+    .vc_toggle_content h5 { margin: 0; font-size: 16px; }
   </style>
   <!-- This site uses the Google Analytics by MonsterInsights plugin v10.0.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
   <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
@@ -5147,13 +5154,20 @@
             <article id="post-8110" class="post-8110 page type-page status-publish hentry">
               <div class="wpb-content-wrapper">
                 <p class=""></p>
-                <!-- Standalone meeting block (not WPBakery) so it always shows -->
-                <div class="cg-correspondence-meeting">
-                  <div class="cg-meeting-title">
-                    Annual meeting of owner and elections of board of directors. - Monday, February 3rd, 2025 Common Room - 7pm
-                  </div>
-                  <div class="cg-meeting-body">
-                    <strong>Click here for more detailed information. <a href="https://701harbour.com/wp-content/uploads/2025/01/correspondence_2025.pdf" target="_blank" rel="noopener">page 1,</a> <a href="https://701harbour.com/wp-content/uploads/2025/01/second_notice_february.pdf" target="_blank" rel="noopener">page 2</a></strong>
+
+                <div class="vc_row wpb_row vc_row-fluid vc_custom_1433701441308 ts-row-wide">
+                  <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="wpb_wrapper">
+                      <div class="vc_do_toggle vc_toggle vc_toggle_default vc_toggle_color_default vc_toggle_size_md vc_toggle_active">
+                        <div class="vc_toggle_title" onclick="this.closest('.vc_toggle').classList.toggle('vc_toggle_active')">
+                          <h4>Annual meeting of owner and elections of board of directors. - Monday, February 3rd, 2025 Common Room - 7pm</h4><i class="vc_toggle_icon"></i>
+                        </div>
+                        <div class="vc_toggle_content">
+                          <h5><strong>Click here for more detailed information. <a href="https://701harbour.com/wp-content/uploads/2025/01/correspondence_2025.pdf" target="_blank" rel="noopener">page 1,</a> <a href="https://701harbour.com/wp-content/uploads/2025/01/second_notice_february.pdf" target="_blank" rel="noopener">page 2</a></strong></h5>
+                          <h6> </h6>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
