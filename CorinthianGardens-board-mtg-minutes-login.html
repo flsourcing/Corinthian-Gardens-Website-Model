@@ -13,8 +13,12 @@
   </script>
   <title>Board MTG Minutes | Corinthian Gardens</title>
   <style type="text/css">
-    /* Clear content from under transparent/sticky header */
-    #main.wrapper { padding-top: 120px !important; }
+    /* Sticky footer: copyright bar at bottom of viewport when content is short */
+    html { height: 100%; }
+    body { min-height: 100vh; display: flex; flex-direction: column; margin: 0; }
+    #page { flex: 1 0 auto; display: flex; flex-direction: column; min-height: 100vh; }
+    #main.wrapper { flex: 1 0 auto; padding-top: 120px !important; }
+    footer#colophon { flex-shrink: 0; margin-top: auto; }
     @media (max-width: 1024px) { #main.wrapper { padding-top: 100px !important; } }
   </style>
   <meta name='robots' content='max-image-preview:large' />
