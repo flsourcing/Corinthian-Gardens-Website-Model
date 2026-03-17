@@ -15,17 +15,16 @@
   <meta name='robots' content='max-image-preview:large' />
   <link rel='dns-prefetch' href='//fonts.googleapis.com' />
   <style type="text/css">
-    /* Standalone accordion dropdown — unique prefix to avoid any theme conflicts */
-    .cgd-accordion { margin-bottom: 22px !important; font-family: inherit !important; }
-    .cgd-accordion-header { display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 15px 20px !important; background-color: #001b43 !important; cursor: pointer !important; user-select: none !important; }
-    .cgd-accordion-header h4 { margin: 0 !important; padding: 0 !important; font-size: 20px !important; font-weight: 900 !important; color: #fff !important; background: none !important; flex: 1 !important; line-height: 1.3 !important; }
-    .cgd-accordion-icon { display: flex !important; align-items: center !important; justify-content: center !important; width: 28px !important; height: 28px !important; flex-shrink: 0 !important; margin-left: 12px !important; }
-    .cgd-accordion-icon svg { width: 18px !important; height: 18px !important; fill: none !important; stroke: #fff !important; stroke-width: 3 !important; transition: transform 0.25s ease !important; }
-    .cgd-accordion-body { padding: 15px 20px !important; background: #fff !important; display: none !important; }
-    .cgd-accordion-body p { margin: 0 !important; font-size: 15px !important; font-weight: bold !important; color: #333 !important; }
-    .cgd-accordion-body a { color: #cc0000 !important; text-decoration: underline !important; }
-    .cgd-accordion.open .cgd-accordion-icon svg { transform: rotate(180deg) !important; }
-    .cgd-accordion.open .cgd-accordion-body { display: block !important; }
+    /* Native details/summary dropdown - works without JS, cannot be overridden */
+    #cgd-dropdown { margin: 0 0 22px 0 !important; padding: 0 !important; display: block !important; visibility: visible !important; opacity: 1 !important; }
+    #cgd-dropdown summary { display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 15px 20px !important; background: #001b43 !important; color: #fff !important; font-size: 20px !important; font-weight: 900 !important; cursor: pointer !important; list-style: none !important; }
+    #cgd-dropdown summary::-webkit-details-marker { display: none !important; }
+    #cgd-dropdown summary::marker { display: none !important; content: none !important; }
+    #cgd-dropdown summary::after { content: '\25BC'; font-size: 14px; color: #fff; margin-left: 10px; transition: transform 0.2s ease; }
+    #cgd-dropdown[open] summary::after { transform: rotate(180deg); }
+    #cgd-dropdown .cgd-dropdown-inner { padding: 15px 20px !important; background: #fff !important; border: 1px solid #e0e0e0 !important; border-top: none !important; }
+    #cgd-dropdown .cgd-dropdown-inner p { margin: 0 !important; font-size: 15px !important; font-weight: bold !important; color: #333 !important; }
+    #cgd-dropdown .cgd-dropdown-inner a { color: #c00 !important; text-decoration: underline !important; }
   </style>
   <!-- This site uses the Google Analytics by MonsterInsights plugin v10.0.3 - Using Analytics tracking - https://www.monsterinsights.com/ -->
   <!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
@@ -5154,17 +5153,12 @@
               <div class="wpb-content-wrapper">
                 <p class=""></p>
 
-                <div class="cgd-accordion open">
-                  <div class="cgd-accordion-header" onclick="this.closest('.cgd-accordion').classList.toggle('open')">
-                    <h4>Annual meeting of owner and elections of board of directors. - Monday, February 3rd, 2025 Common Room - 7pm</h4>
-                    <span class="cgd-accordion-icon">
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </span>
-                  </div>
-                  <div class="cgd-accordion-body">
+                <details id="cgd-dropdown" open>
+                  <summary>Annual meeting of owner and elections of board of directors. - Monday, February 3rd, 2025 Common Room - 7pm</summary>
+                  <div class="cgd-dropdown-inner">
                     <p>Click here for more detailed information. <a href="https://701harbour.com/wp-content/uploads/2025/01/correspondence_2025.pdf" target="_blank" rel="noopener">page 1,</a> <a href="https://701harbour.com/wp-content/uploads/2025/01/second_notice_february.pdf" target="_blank" rel="noopener">page 2</a></p>
                   </div>
-                </div>
+                </details>
 
                 <p class="">Muddy area out back</p>
 
